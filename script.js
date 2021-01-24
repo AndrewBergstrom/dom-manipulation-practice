@@ -14,7 +14,8 @@ function createListElement() {
 	input.value = "";
 
 	var btn = document.createElement("button");
-	btn.appendChild(document.createTextNode(input.value));
+	btn.appendChild(document.createTextNode("Delete!"));
+	litstItems.appendChild(btn);
 }
 
 function addListAfterClick() {
