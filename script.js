@@ -16,7 +16,8 @@ function createListElement() {
 	var btn = document.createElement("button");
 	btn.appendChild(document.createTextNode("Delete!"));
 	litstItems.appendChild(btn);
-}
+	button.onclick = removeParent;
+};
 
 function addListAfterClick() {
 	if (inputLength() > 0) {
@@ -30,22 +31,20 @@ function addListAfterKeypress(event) {
 	}
 }
 
+function deleteButton(){
+	var del = document.createElement('button');
+	del.appendChild(document.createTextNode("Delete"));
+	listItems[i].appendChild(del);
+	del.onclick = removeParent;
+}
+
+function removeParent(e){
+	e.target.parentNode.remove();
+}
+
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // var button = document.getElementById("enter");
 // var input = document.getElementById("userinput");
