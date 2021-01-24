@@ -11,10 +11,6 @@ function listLength(){
 	return listItems.length;
 };
 
-for(i = 0; i < listLength(); i++){
-	deleteButton();
-};
-
 
 function createListElement() {
 	var li = document.createElement("li");
@@ -24,35 +20,39 @@ function createListElement() {
 
 	var del = document.createElement("button");
 	del.appendChild(document.createTextNode("Delete!"));
-	litstItems.appendChild(del);
-	button.onclick = removeParent;
+	li.appendChild(del);
+	del.onclick = removeParent;
 };
 
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
-		deleteButton();
+	
 	}
 };
 
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
-		deleteButton();
+	
 	}
 };
 
 ul.onclick = function(event){
-	event.target.classList.toggle("done")
+	var target = event.target;
+	target.classList.toggle("done");
 }
 
 function deleteButton(){
-	var del = document.createElement('button');
-	del.appendChild(document.createTextNode("Delete"));
+	var del = document.createElement("button");
+	del.appendChild(document.createTextNode("Delete!"));
 	listItems[i].appendChild(del);
 	del.onclick = removeParent;
 };
 
+for(i = 0; i < listLength(); i++){
+	deleteButton();
+};
 
 function removeParent(e){
 	e.target.parentNode.remove();
