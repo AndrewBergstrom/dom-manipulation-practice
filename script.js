@@ -7,6 +7,7 @@ function inputLength() {
 	return input.value.length;
 };
 
+// FUNCTION RETURNING THE LIST LENGTH ARRAY
 function listLength(){
 	return listItems.length;
 };
