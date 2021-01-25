@@ -11,7 +11,7 @@ function listLength(){
 	return listItems.length;
 };
 
-
+// FUNCTION CREATING NEW LIST ITEM AND APPENDING TO SHOPPING LIST, AS WELL AS ADDING A DELETE BUTTON TO NEW L.I
 function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
@@ -31,6 +31,7 @@ function addListAfterClick() {
 	}
 };
 
+// CALLBACK FUNCTION ALLOWING FOR KEYPRESS TO WORK FOR INPUT FIELD
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
@@ -43,6 +44,7 @@ ul.onclick = function(event){
 	target.classList.toggle("done");
 }
 
+// DELETE BUTTON APPENDING TO LIST ITEMS
 function deleteButton(){
 	var del = document.createElement("button");
 	del.appendChild(document.createTextNode("Delete!"));
